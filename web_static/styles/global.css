@@ -1,0 +1,23 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+header
+{
+    height: 75px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    background: url('../images/icon.png') 10px center no-repeat;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer
+{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
