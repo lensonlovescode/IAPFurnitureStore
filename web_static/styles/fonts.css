@@ -1,0 +1,14 @@
+@font-face
+{
+    font-family: 'NewAmsterdam';
+    src: url('fonts/NewAmsterdam-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face
+{
+    font-family: 'pointerone';
+    src: url('fonts/PoiretOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
