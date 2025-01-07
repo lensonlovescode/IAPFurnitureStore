@@ -1,0 +1,114 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+header
+{
+    background-color: #efefe9;
+}
+.container
+{
+    display: flex;
+    height: 100vh;
+}
+#h1
+{
+    font-family: 'DM Serif Text', sans-serif;
+    text-transform:uppercase;
+    font-weight: 800;
+    text-align: center;
+    color: #223030;
+    margin-bottom: 20px;
+}
+.section1
+{
+    width:55%;
+}
+.section1 img
+{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+.section2
+{
+    width: 45%;
+    padding: 20px;
+}
+.fname, .sname, .email, .password, .phone, .dateofbirth
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 7px 0;
+    border: 1px solid grey;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+label[for="dateofbirth"]
+{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+button[type="submit"]
+{
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.243rem;
+    background-color: #223030;
+    color: #efefe9;
+    border: none;
+    border-radius: 6px;
+}
+input[placeholder="e.g. johndoe@gmail.com"], input[placeholder="e.g. John"], input[placeholder="10 digits"]
+{
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-style: italic;
+    font-size:0.9em;
+    text-align: left;
+}
+label[for="male"], label[for="female"], label[for="other"]
+{
+    margin-right: 10px;
+    font-weight: 400;
+}
+.select
+{
+    margin-bottom: 7px;
+}
+.head, .headL
+{
+    display: flex;
+}
+.head
+{
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+.headL
+{
+    gap: 10px;
+}
+.reach
+{
+    padding-right: 10px;
+}
+.logo
+{
+    width: 70px;
+}
