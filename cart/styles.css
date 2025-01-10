@@ -1,0 +1,96 @@
+/* Reset all margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #EFEFE9;
+    color: #223030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cart-container {
+    background-color: #FFF;
+    width: 90%;
+    max-width: 960px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #523D35;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #D1C8A1;
+}
+
+th {
+    background-color: #BBA58F;
+    color: #FFF;
+}
+
+tr:nth-child(even) {
+    background-color: #F5F2EC;
+}
+
+.btn {
+    background-color: #523D35;
+    color: #EFEFE9;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #223030;
+}
+
+.total-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.checkout-btn {
+    display: block;
+    background-color: #BBA58F;
+    color: #223030;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1em;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #523D35;
+    color: #EFEFE9;
+}

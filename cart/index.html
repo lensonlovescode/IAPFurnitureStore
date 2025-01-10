@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Store - Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <tr data-id="1">
+                    <td>Sofa</td>
+                    <td>$500</td>
+                    <td>
+                        <button class="btn" onclick="adjustQuantity(1, -1)">-</button>
+                        <input type="number" id="quantity-1" value="1" onchange="updateCart()">
+                        <button class="btn" onclick="adjustQuantity(1, 1)">+</button>
+                    </td>
+                    <td id="total-1">$500</td>
+                </tr>
+                <tr data-id="2">
+                    <td>Dining Table</td>
+                    <td>$300</td>
+                    <td>
+                        <button class="btn" onclick="adjustQuantity(2, -1)">-</button>
+                        <input type="number" id="quantity-2" value="1" onchange="updateCart()">
+                        <button class="btn" onclick="adjustQuantity(2, 1)">+</button>
+                    </td>
+                    <td id="total-2">$300</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-price">
+            Total Price: $<span id="total-price">800</span>
+        </div>
+        <a href="#" class="checkout-btn" onclick="checkout()">Proceed to Checkout</a>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
