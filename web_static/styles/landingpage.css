@@ -212,6 +212,5 @@ input[placeholder="e.g. johndoe@gmail.com"]
 {
     padding: 10px;
     font-size: 0.9em;
-    text-align: left;
-    font-family: 'Montserrat', sans-serif;
+    text-transfor: italic;
 }
