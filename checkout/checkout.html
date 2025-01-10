@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+   <link rel="stylesheet" href="web_static/web_static/styles/checkout.css">
+</head>
+<body>
+  <header>
+    <input placeholder="Search..." class="search" name="text" type="query" />
+</header>
+<nav class="navigator">
+    <li>OFFICE</li>
+    <li>BEDROOM</li>
+    <li>DINING</li>
+    <li>LIVING ROOM</li>
+    <li>OUTDOOR</li>
+</nav>
+    <div class="container">
+<div class="paymentDetails">
+    <h1>Checkout</h1>
+    <p>To complete your purchase, please provide the following details. </p>
+    <div class="detailsForm">
+        <form>
+            <h2>Personal Details: </h2>
+            <div class="fullName">
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullName" id="name" required
+                placeholder="John Doe"
+                >
+        </div>
+        
+        <div class="emailAddress">
+                <label for="emailAddress">Email address</label>
+                <input type="email" name="emailAddress" id="emailAddress" required 
+                placeholder="example@gmail.com"
+                > <br>
+        </div>
+       <div class="phoneNumber">
+        
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" name="phoneNumber" id="phoneNumber" required 
+            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+            placeholder="xxx-xxx-xxxx"
+            > <br>
+        
+       </div>
+       <div class="country">
+        <h2>Select Location</h2>
+    
+        <label for="country">Country:</label>
+        <select id="countries" onchange="updateStates()">
+            <option value="">Select Country</option>
+        </select>
+    
+        <br><br>
+    
+        <label for="state">State:</label>
+        <select id="state" onchange="updateCities()">
+            <option value="">Select State</option>
+        </select>
+    
+        <br><br>
+    
+        <label for="city">City:</label>
+        <select id="city">
+            <option value="">Select City</option>
+        </select>
+    <script src="web_static/web_static/scripts/cityselect.js"></script>
+</div>
+       <h2>Card Details</h2>
+       <div class="cardDetails">
+        <div class="cardName">
+            <label for="cardName">Card Name</label>
+            <input type="text" name="cardName" id="cardName" required
+            > 
+       </div>
+    
+           <div class="cardNumber" id="cardNo">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" name="cardNumber" id="cardNumber" required
+            maxlength="19"
+            placeholder="XXXX-XXXX-XXXX-XXXX"
+            > 
+       </div>
+       <div class="cardNumber">
+        <label for="cvcNumber">CVC</label>
+        <input type="number" name="cvcNumber" id="cvcNumber" required
+        pattern="[0-9]{3}"
+        max="999"
+        min="100"
+        > 
+   </div>
+   <div class="cardNumber">
+    <label for="expiryDate">Expiry Date</label>
+    <input type="text" name="expiryDate" id="expiryDate" required
+    pattern="[0-9]{2}/[0-9]{2}"
+    placeholder="MM/YY"
+    > 
+</div>
+       </div>
+               <input  class="submit" type="submit" value="Make Payment">
+        </form> 
+    </div>  
+</div>
+<div class="reviewCart">
+    <h2>Review Cart:</h2>
+    <div class="cart-review">
+        <h2>Review your cart</h2>
+<div class="cartItems">
+        <div class="cart-item" data-price="20">
+          <img src="web_static/lib/Room-Board-Metro-Two-Cushion-Sofa-f945b411d3264c67ab3ec563a9c4c559.jpg" alt="DuoComfort Sofa Premium">
+          <div>
+            <p>DuoComfort Sofa Premium</p>
+            <div class="quantity-control">
+              <button class="decrease">-</button>
+              <input type="number" class="quantity" value="1" min="1">
+              <button class="increase">+</button>
+            </div>
+            <span class="item-total">$20.00</span>
+          </div>
+        </div>
+    
+        <div class="cart-item" data-price="25">
+          <img src="web_static/lib/WalnutStandingDesk-AdjustableHeight-2_1300x.jpg" alt="IronOne Desk">
+          <div>
+            <p>IronOne Desk</p>
+            <div class="quantity-control">
+              <button class="decrease">-</button>
+              <input type="number" class="quantity" value="1" min="1">
+              <button class="increase">+</button>
+            </div>
+            <span class="item-total">$25.00</span>
+          </div>
+        </div>
+
+        <div class="discount-code">
+          <input type="text" placeholder="Discount code">
+          <button>Apply</button>
+        </div>
+
+        <div class="totals">
+            <p><span>Subtotal</span><span id="subtotal">$45.00</span></p>
+            <p><span>Shipping</span><span id="shipping">$5.00</span></p>
+            <p><span>Discount</span><span id="discount">$10.00</span></p>
+            <p class="total"><span>Total</span><span id="total">$40.00</span></p>
+          </div>
+
+    
+  </div> 
+      <div class="secure-checkout">
+        <p>Secure Checkout - SSL Encrypted</p>
+        <p>Ensuring your financial and personal details are secure during every transaction.</p>
+      </div>
+</div>
+
+
+
+    <script src="/web_static/web_static/scripts/checkout.js">
+    </script>
+
+</div>
+
+    
+</body>
+</html>
