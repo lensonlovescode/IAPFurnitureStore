@@ -1,0 +1,216 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    color: #223030;
+}
+a{
+    color: black;
+}
+.links, .newsletter
+{
+    margin-top: 10px;
+}
+.signup
+{
+    padding: 28px 0;
+    text-align: center;
+    background-color: #523d35;
+    margin-bottom: 7px;
+    font-size: 35px;
+    color: #bba58f
+}
+.head, .images-aligned, .headL
+{
+    display: flex;
+}
+.head
+{
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.headL
+{
+    gap: 10px;
+}
+.needs
+{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.reach
+{
+    padding-right: 10px;
+}
+.images-aligned
+{
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+.images-aligned img
+{
+    width: 390px;
+    height:390px;
+    object-fit:cover;
+}
+.transform
+{
+    font-size: 2em;
+    text-align: center;
+    padding: 10px;
+    margin: 5px auto;
+}
+.article
+{
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.5;
+    padding: 5px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.h3
+{
+    margin-top: 10px;
+}
+.icon
+{
+    display: inline-block;
+    margin: 10px;
+    margin-top: 50px;
+}
+.socials
+{
+    display: flex;
+    gap: 5px;
+}
+.aligned{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+label[for="email"]
+{
+    display: block;
+    margin: 10px 0;
+    font-family:'Montserrat', sans-serif;
+}
+input[type="email"]
+{
+    width: 100%;
+    padding: 10px;
+    margin: 4px 0;
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-size:0.9em;
+}
+button[type="submit"]
+{
+    padding: 10px;
+    width: 40%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #223030;
+    color: #efefe9;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    border:none;
+}
+footer
+{
+    background-color: #959d90;
+}
+footer label
+{
+    color:#efefe9;
+}
+a[href="https://youtu.be/dQw4w9WgXcQ?si=HW7NyCzcbciwKjJh"]
+{
+    color: #efefe9;
+    text-decoration: none;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
+.divider
+{
+    border-bottom: 1px solid #efefe9;
+}
+.amazing
+{
+    text-align: center;
+    padding: 30px;
+    margin: 5px auto;
+    background: linear-gradient(to left, #523d35, #e8d9cd );
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+.iconz
+{
+    display: flex;
+    justify-content: center;
+}
+.bila
+{
+    font-family: 'Sixtyfour', 'Montserrat', sans-serif;
+}
+.show
+{
+    transition: transform 0.65s;
+}
+.show:hover
+{
+    transform: scale(1.08);
+}
+.iconzz
+{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+}
+.last
+{
+    text-align: center;
+    background-color: #bba58f;
+}
+.container
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 50px;
+    justify-content: center;
+}
+.container img
+{
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+}
+.show a
+{
+    color: #223030;
+    text-decoration: none;
+}
+input[placeholder="e.g. johndoe@gmail.com"]
+{
+    padding: 10px;
+    font-size: 0.9em;
+    text-transfor: italic;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/registration.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <img class="logo" src="images/icon.svg" alt="Tagline Shore Image Logo">
+            <div class="headL">
+                <div class="ig">
+                    <a href="https://youtu.be/dQw4w9WgXcQ?si=HW7NyCzcbciwKjJh" target="_blank"><img src="images/instagram.svg" alt="Instagram SVG"></a>
+                </div>
+                <div class="fb">
+                    <a href="https://youtu.be/dQw4w9WgXcQ?si=HW7NyCzcbciwKjJh" target="_blank"><img src="images/facebook.svg" alt="Facebook SVG"></a>
+                </div>
+                <div class="yt">
+                    <a href="https://youtu.be/dQw4w9WgXcQ?si=HW7NyCzcbciwKjJh" target="_blank"><img src="images/youtube.svg" alt="Youtube SVG"></a>
+                </div>
+                <p class="reach">taglineshore@gmail.com | 0712345678</p>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="section1">
+            <img src="images/grant-durr-3oHZJRtYQGI-unsplash.jpg" alt="Furniture">
+        </div>
+        <div class="section2">
+            <form action="php/registration.php" method="post">
+                <h1 id="h1">Registration</h1>
+                <label for="fname">First Name:</label>
+                <input class="fname" type="text" id="fname" name="fname" required>
+
+                <label for="sname">Second Name:</label>
+                <input class="sname" type="text" id="sname" name="sname" required>
+
+                <label for="email">Email:</label>
+                <input class="email" type="email" id="email" name="email" required placeholder="e.g. johndoe@gmail.com">
+
+                <label for="phone">Phone Number:</label>
+                <input class="phone" type="number" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="10 digits">
+
+                <label for="password">Create your new Password:</label>
+                <input class="password" type="password" id="password" name="password" pattern="[a-zA-Z0-9]{8,}" required>
+
+                <p class="select">Select your gender:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other" checked>
+                <label for="other">Other</label>
+
+                <label for="dateofbirth">Input your date of Birth</label>
+                <input class="dateofbirth" type="date" name="dateofbirth" id="dateofbirth" min="1920-01-01" max="2010-12-31" required>
+
+                <label for="terms"><input type="checkbox" id="terms" name="terms" required> I accept the <a href="" target="_blank">terms and conditions</a></label>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
