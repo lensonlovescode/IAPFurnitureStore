@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; 
 $username = "root"; 
-$password = "#Lensoni5lenson";
+$password = "";
 $dbname = "TaglineShore"; 
 
 
