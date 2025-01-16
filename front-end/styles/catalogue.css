@@ -104,7 +104,7 @@
 {
     box-shadow: 5.5px 7px 0 black;
 }
-.button
+/* .button
 {
     --color: #00A97F;
     padding: 0.8em 1.7em;
@@ -157,7 +157,7 @@
    
    .button:active {
     filter: brightness(.8);
-   }
+   } */
    
 
 @media only screen and (max-width: 600px)
