@@ -2,8 +2,8 @@
 // Database connection details
 $host = "localhost";
 $username = "root";
-$password = "";
-$database = "your_database_name";
+$password = "#Lensoni5lenson";
+$database = "TaglineShore";
 
 // Connect to the database
 $conn = new mysqli($host, $username, $password, $database);
@@ -35,5 +35,4 @@ header('Content-Type: application/json');
 echo json_encode($products);
 
 // Close the database connection
-$conn->close();
-?>
+$conn->close()
