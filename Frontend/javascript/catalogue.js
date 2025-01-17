@@ -33,81 +33,93 @@ searchInput.addEventListener('keyup', function(event) {
         }
     }
 });
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('../Backend/php/fetch_products.php')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.querySelector('.container');
-        container.innerHTML = ''; // Clear static content
-        data.forEach(product => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product');
-            productElement.innerHTML = `
-                <img class="images" src="${product.image_path}" alt="${product.name}">
-                <h2>${product.name}</h2>
-                <p>$${product.price}</p>
-                <button class="button">Add To Cart</button>
-            `;
-            container.appendChild(productElement);
-        });
-    })
-    .catch(error => console.error('Error fetching products:', error));
-});
 // document.addEventListener('DOMContentLoaded', () => {
-//     const mockData = [
-//         {
-//             "id": "Galaxy_Seat",
-//             "image_path": "images/bucketset.avif",
-//             "name": "Galaxy Seat",
-//             "price": "1319.99"
-//         },
-//         {
-//             "id": "Tempest_Throne",
-//             "image_path": "images/officeseat.avif",
-//             "name": "Tempest Throne",
-//             "price": "2459.99"
-//         },
-//         {
-//             "id": "Quantum_Lounge",
-//             "image_path": "images/modern_arm_seat_with_lights.avif",
-//             "name": "Quantum Lounge",
-//             "price": "3200.99"
-//         },
-//         {
-//             "id": "oak_stool",
-//             "image_path": "images/oak_stool.avif",
-//             "name": "Oak Stool",
-//             "price": "49.99"
-//         },
-//         {
-//             "id": "Marry_Me_Two",
-//             "image_path": "images/two_seater_applewood.avif",
-//             "name": "Marry Me Two",
-//             "price": "1209.99"
-//         },
-//         {
-//             "id": "New_Product",
-//             "image_path": "images/oak_stool",
-//             "name": "New Product",
-//             "price": "999.99"
-//         }
-        
-//     ];
-
-//     const container = document.querySelector('.container');
-//     container.innerHTML = ''; // Clear static content
-
-//     mockData.forEach(product => {
-//         const productElement = document.createElement('div');
-//         productElement.classList.add('product');
-//         const imagePath = product.image_path && product.image_path !== '' ? product.image_path : 'images/default_image.avif';
-//         productElement.innerHTML = `
-//             <img class="images" src="${product.image_path}" alt="${product.name}">
-//             <h2>${product.name}</h2>
-//             <p>$${product.price}</p>
-//             <button class="button">Add To Cart</button>
-//         `;
-//         container.appendChild(productElement);
-//         container.style.display = 'grid';
-//     });
+//     fetch('../Backend/php/fetch_products.php')
+//     .then(response => response.json())
+//     .then(data => {
+//         const container = document.querySelector('.container');
+//         container.innerHTML = ''; // Clear static content
+//         data.forEach(product => {
+//             const productElement = document.createElement('div');
+//             productElement.classList.add('product');
+//             productElement.innerHTML = `
+//                 <img class="images" src="${product.image_path}" alt="${product.name}">
+//                 <h2>${product.name}</h2>
+//                 <p>$${product.price}</p>
+//                 <button class="button">Add To Cart</button>
+//             `;
+//             container.appendChild(productElement);
+//         });
+//     })
+//     .catch(error => console.error('Error fetching products:', error));
 // });
+document.addEventListener('DOMContentLoaded', () => {
+    const mockData = [
+        {
+            "id": "Galaxy_Seat",
+            "image_path": "images/bucketset.avif",
+            "name": "Galaxy Seat",
+            "price": "1319.99"
+        },
+        {
+            "id": "Tempest_Throne",
+            "image_path": "images/officeseat.avif",
+            "name": "Tempest Throne",
+            "price": "2459.99"
+        },
+        {
+            "id": "Quantum_Lounge",
+            "image_path": "images/modern_arm_seat_with_lights.avif",
+            "name": "Quantum Lounge",
+            "price": "3200.99"
+        },
+        {
+            "id": "oak_stool",
+            "image_path": "images/oak_stool.avif",
+            "name": "Oak Stool",
+            "price": "49.99"
+        },
+        {
+            "id": "Marry_Me_Two",
+            "image_path": "images/two_seater_applewood.avif",
+            "name": "Marry Me Two",
+            "price": "1209.99"
+        },
+
+        
+    ];
+
+    const container = document.querySelector('.container');
+    container.innerHTML = ''; // Clear static content
+
+    mockData.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        const imagePath = product.image_path && product.image_path !== '' ? product.image_path : 'images/default_image.avif';
+        productElement.innerHTML = `
+            <img class="images" src="${product.image_path}" alt="${product.name}">
+            <h2>${product.name}</h2>
+            <p>$${product.price}</p>
+            <button class="button">Add To Cart</button>
+        `;
+        container.appendChild(productElement);
+        container.style.display = 'grid';
+    });
+});
+
+	document.getElementById("filterby").addEventListener("change", function () {
+		const container = document.querySelector(".container");
+		const products = Array.from(container.children); // Get all product divs as an array
+		const selectedOption = this.value; // Get selected filter option
+
+		// Extract price, sort products, and rearrange
+		products.sort((a, b) => {
+			const priceA = parseFloat(a.querySelector("p").textContent.replace("$", ""));
+			const priceB = parseFloat(b.querySelector("p").textContent.replace("$", ""));
+			return selectedOption === "lowest_to_highest" ? priceA - priceB : priceB - priceA;
+		});
+
+		// Clear and append products in sorted order
+		container.innerHTML = ""; 
+		products.forEach(product => container.appendChild(product));
+	});
