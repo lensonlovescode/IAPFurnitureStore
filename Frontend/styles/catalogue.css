@@ -104,7 +104,7 @@
 {
     box-shadow: 5.5px 7px 0 black;
 }
-/* .button
+.button
 {
     --color: #00A97F;
     padding: 0.8em 1.7em;
@@ -157,9 +157,47 @@
    
    .button:active {
     filter: brightness(.8);
-   } */
+   }
    
-
+   footer
+   {
+       background-color: #959d90;
+   }
+   footer label
+   {
+       color:#efefe9;
+   }
+   .aligned
+   {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2%;
+}
+.newsletter
+{
+    height: 100%;
+    width: 33%;
+}
+.links h3 p{
+    text-decoration: none;
+}
+.socials
+{
+    display: flex;
+    gap: 5px;
+}
+.icon
+{
+    display: inline-block;
+    margin: 10px;
+    margin-top: 50px;
+}
+.links, .newsletter
+{
+    margin-top: 10px;
+}
 @media only screen and (max-width: 600px)
 {
     .container
