@@ -3,9 +3,10 @@ header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Max-Age: 86400');
+
 $host = "localhost";
 $username = "root";
-$password = "";
+$password = "WS%*N**8xJ";
 $database = "TaglineShore";
 
 // Connect to the database
@@ -18,7 +19,7 @@ if ($conn->connect_error) {
 }
 
 // Query to fetch products
-$query = "SELECT id, name FROM products";
+$query = "SELECT id, name, image_path, price FROM products";
 $result = $conn->query($query);
 
 // Check if the query was successful

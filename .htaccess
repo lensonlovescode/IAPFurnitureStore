@@ -1,10 +1,8 @@
 RewriteEngine On
 RewriteBase /your_project_folder/
 
-# Route /api requests to the PHP backend
 RewriteRule ^api/?$ Back-end/php/index.php [L]
 
-# Serve front-end files normally
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ front-end/$1 [L]

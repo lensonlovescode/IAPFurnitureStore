@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; 
 $username = "root"; 
-$password = ""; 
+$password = "WS%*N**8xJ"; 
 $dbname = "user_data"; 
 
 
@@ -32,6 +32,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-header("Location: /IAPFurnitureStore/front-end/catalogue.html");
+header("Location: /IAPFurnitureStore/Frontend/catalogue.html");
 exit(); 
 ?>

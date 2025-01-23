@@ -33,25 +33,64 @@ searchInput.addEventListener('keyup', function(event) {
         }
     }
 });
+// document.addEventListener('DOMContentLoaded', () => {
+//     fetch('../Backend/php/fetch_products.php')
+//     .then(response => response.json())
+//     .then(data => {
+//         const container = document.querySelector('.container');
+//         container.innerHTML = ''; // Clear static content
+//         data.forEach(product => {
+//             const productElement = document.createElement('div');
+//             productElement.classList.add('product');
+//             productElement.innerHTML = `
+//                 <img class="images" src="${product.image_path}" alt="${product.name}">
+//                 <h2>${product.name}</h2>
+//                 <p>$${product.price}</p>
+//                 <button class="button">Add To Cart</button>
+//             `;
+//             container.appendChild(productElement);
+//         });
+//     })
+//     .catch(error => console.error('Error fetching products:', error));
+// });
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../Backend/php/fetch_products.php')
-    .then(response => response.json())
+    fetch('http://localhost/IAPFurnitureStore/Backend/php/fetch_products.php')
+    .then(response => {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
-        const container = document.querySelector('.container');
-        container.innerHTML = ''; // Clear static content
-        data.forEach(product => {
+        console.log('Data received:', data);
+        if (!data || data.length === 0) {
+            console.log('No products found in database');
+            return;
+        }
+        
+        const container = document.getElementById("products-container");
+        console.log(container)
+        container.innerHTML = ''; 
+        
+        data
+            // .sort((a, b) => a.price - b.price)
+            .forEach(product => {
             const productElement = document.createElement('div');
             productElement.classList.add('product');
             productElement.innerHTML = `
-                <img class="images" src="${product.image_path}" alt="${product.name}">
-                <h2>${product.name}</h2>
-                <p>$${product.price}</p>
-                <button class="button">Add To Cart</button>
-            `;
+                    <img class="images" src="/IAPFurnitureStore/${product.image_path}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>$${product.price}</p>
+                    <button class="button">Add To Cart</button>
+                `;
             container.appendChild(productElement);
         });
     })
-    .catch(error => console.error('Error fetching products:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        console.error('Error details:', error.message);
+    });
 });
 // document.addEventListener('DOMContentLoaded', () => {
 //     const mockData = [
