@@ -1,29 +1,29 @@
-// Initialize cart
-const cart = [];
+document.querySelectorAll('.button').forEach(button => {
+    button.addEventListener('click', function () {
+        const productElement = this.closest('.product');
+        const productName = productElement.querySelector('h2').textContent; // Product name inside <h2>
+        const productPrice = productElement.querySelector('p').textContent.replace('$', ''); // Price inside <p>
+        const productImage = productElement.querySelector('img').getAttribute('src'); // Image source path
 
-// Select all "Add to Cart" buttons
-const buttons = document.querySelectorAll('.button');
+        const productData = {
+            name: productName,
+            price: productPrice,
+            image: productImage
+        };
 
-// Add event listener to each button
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		// Get product details
-		const product = button.parentElement;
-		const productName = product.querySelector('h2').innerText;
-		const productPrice = parseFloat(product.querySelector('p').innerText.replace('$', ''));
-
-		// Check if product is already in the cart
-		const existingProduct = cart.find(item => item.name === productName);
-		if (existingProduct) {
-			existingProduct.quantity += 1;
-		} else {
-			cart.push({ name: productName, price: productPrice, quantity: 1 });
-		}
-
-		// Notify the user
-		alert(`${productName} added to cart!`);
-
-		// Log cart for debugging
-		console.log(cart);
-	});
+        fetch('add_to_cart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(productData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Product added:', data);
+            })
+            .catch(error => {
+                console.error('Error adding product:', error);
+            });
+    });
 });
