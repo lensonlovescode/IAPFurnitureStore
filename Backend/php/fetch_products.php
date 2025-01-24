@@ -3,7 +3,7 @@
 // Database setup
 $host = "localhost";
 $username = "root";
-$password = "]B*GOSA!NE86)zGp";
+$password = "#Lensoni5lenson";
 $database = "TaglineShore";
 
 $conn = new mysqli($host, $username, $password, $database);

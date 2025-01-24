@@ -1,9 +1,9 @@
 <?php
-// Database connection details
+
 $host = "localhost"; // Replace with your host
 $username = "root"; // Replace with your DB username
 $password = ""; // Replace with your DB password
-$database = "my_shop"; // Replace with your database name
+$database = "TaglineShore"; // Replace with your database name
 
 // Create a connection to the database
 $conn = new mysqli($host, $username, $password, $database);
@@ -24,21 +24,21 @@ try {
     $data = json_decode($jsonData, true);
     
     // Check if the JSON data is valid
-    if (!$data || !isset($data['id'], $data['name'], $data['price'], $data['image_path'])) {
-        throw new Exception("Invalid input. Ensure 'id', 'name', 'price', and 'image_path' are provided.");
+    if (!$data || !isset($data['name'], $data['price'], $data['image'])) {
+        throw new Exception("Invalid input. Ensure 'name', 'price', and 'image' are provided.");
     }
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO product (id, name, price, image_path) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("isds", $data['id'], $data['name'], $data['price'], $data['image_path']);
+    $stmt = $conn->prepare("INSERT INTO cart (name, price, image_path) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $data['name'], $data['price'], $data['image']);
 
     // Execute the query
     if ($stmt->execute()) {
         // Send success response
-        echo json_encode(["status" => "success", "message" => "Product added successfully."]);
+        echo json_encode(["status" => "success", "message" => "Product added to cart successfully."]);
     } else {
         // Handle execution failure
-        throw new Exception("Error inserting product: " . $stmt->error);
+        throw new Exception("Error inserting product into cart: " . $stmt->error);
     }
 
     // Close the prepared statement
@@ -51,3 +51,4 @@ try {
 // Close the database connection
 $conn->close();
 ?>
+
