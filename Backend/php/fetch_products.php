@@ -1,44 +1,39 @@
 <?php
-header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Max-Age: 86400');
 
+// Database setup
 $host = "localhost";
 $username = "root";
-$password = "WS%*N**8xJ";
+$password = "]B*GOSA!NE86)zGp";
 $database = "TaglineShore";
 
-// Connect to the database
 $conn = new mysqli($host, $username, $password, $database);
 
-// Check connection
+// Check database connection
 if ($conn->connect_error) {
-    header('HTTP/1.1 500 Internal Server Error');
-    die("Database connection failed: " . $conn->connect_error);
+    http_response_code(500);
+    echo json_encode(["error" => "Database connection failed: " . $conn->connect_error]);
+    exit;
 }
 
-// Query to fetch products
-$query = "SELECT id, name, image_path, price FROM products";
+// Fetch products
+$query = "SELECT * FROM products";
 $result = $conn->query($query);
 
-// Check if the query was successful
-if ($result === false) {
-    header('HTTP/1.1 500 Internal Server Error');
-    die("Query failed: " . $conn->error);
+if (!$result) {
+    http_response_code(500);
+    echo json_encode(["error" => "Query failed: " . $conn->error]);
+    exit;
 }
 
-// Fetch the results into an array
+// Build product array
 $products = [];
 while ($row = $result->fetch_assoc()) {
     $products[] = $row;
 }
 
-// Send JSON response
-header('Content-Type: application/json');
-echo json_encode($products);
+// Output results
+http_response_code(200);
+echo json_encode($products, JSON_PRETTY_PRINT);
 
-// Close the database connection
 $conn->close();
 ?>
-

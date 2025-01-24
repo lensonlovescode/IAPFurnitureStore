@@ -69,7 +69,7 @@
 }
 .images
 {
-    width: 95%;
+    width: 50%;
     height: auto;
     border-radius: 4px;
     margin-bottom: 20px;
@@ -106,7 +106,7 @@
 }
 .button
 {
-    --color: #00A97F;
+    --color: #926502;
     padding: 0.8em 1.7em;
     background-color: transparent;
     border-radius: .3em;

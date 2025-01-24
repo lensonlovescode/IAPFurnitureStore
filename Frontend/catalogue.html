@@ -7,13 +7,7 @@
     <link rel="stylesheet" href="styles/catalogue.css">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/fonts.css">
-
     <link rel="icon" href="images/logo.png">
-    <style>
-        .product {
-
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -31,7 +25,7 @@
                 <option value="highest_to_lowest">Highest to lowest</option>
         </select>
         </div>
-        <main id="products-container">
+        <main id="products_container">
         </main>
     <footer>
         <div class="aligned">
@@ -75,6 +69,215 @@
     </footer>
     <script src="./javascript/catalogue.js"></script>
     <script src="javascript/add_to_cart.js" ></script>
+    <style>
+    .navigator
+    {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+    .navigator li
+    {
+        margin: 1%;
+        font-size: 20px;
+    }
+    .filterby
+    {
+        height: 40px;
+        border-top: 1px solid #dddddd;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .filterby select
+    {
+        height: 30px;
+        width: 135px;
+        padding: 3px;
+        margin-right: 30px;
+
+    }
+    .filterby h4
+    {
+        margin-right: 15px;
+
+    }
+    .filterby select option
+    {
+
+        border-top: 1px solid #dddddd;
+        background-color: #f9ffc4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #products_container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        grid-gap: 16px;
+        margin: 20px;
+    }
+    .product
+    {
+        background: #fff;
+        border-radius: 7px;
+        border: 1px solid #323232;
+        box-shadow: 15px 15px 30px #bebebe,-15px -15px 30px #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 20px;
+
+    }
+    .images
+    {
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 20px;
+
+    }
+    .product h2
+    {
+        font-family: "pointerone", sans-serif;
+        font-size: medium; 
+    }
+    .product p
+    {
+        font-family: "pointerone", sans-serif;
+        font-size: medium;
+        margin: 10px;
+    }
+    .search
+    {
+        font-family: "SF Pro";
+        width: 40%;
+        height: 15px;
+        padding: 0.875rem;
+        font-size: 1rem;
+        border: 1.5px solid #000;
+        border-radius: 0.95rem;
+        box-shadow: 5px 5px 10px #bebebe,-5px -5px 10px #ffffff;
+        outline: none;
+        transition: ease 0.25s;
+    }
     
+    .search:focus
+    {
+        box-shadow: 5.5px 7px 0 black;
+    }
+    .button
+    {
+        --color: #926502;
+        padding: 0.8em 1.7em;
+        background-color: transparent;
+        border-radius: .3em;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: .5s;
+        font-weight: 400;
+        font-size: 17px;
+        border: 1px solid;
+        font-family: 'pointerone', sans-serif;
+        text-transform: uppercase;
+        color: var(--color);
+        z-index: 1;
+    }
+    
+    .button::before, .button::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        background-color: var(--color);
+        transition: 1s ease;
+    }
+    
+    .button::before {
+        top: -1em;
+        left: -1em;
+    }
+    
+    .button::after {
+        left: calc(100% + 1em);
+        top: calc(100% + 1em);
+    }
+    
+    .button:hover::before, .button:hover::after {
+        height: 410px;
+        width: 410px;
+    }
+    
+    .button:hover {
+        color: rgb(10, 25, 30);
+    }
+    
+    .button:active {
+        filter: brightness(.8);
+    }
+    
+    footer
+    {
+        background-color: #959d90;
+    }
+    footer label
+    {
+        color:#efefe9;
+    }
+    .aligned
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2%;
+    }
+    .newsletter
+    {
+        height: 100%;
+        width: 33%;
+    }
+    .links h3 p{
+        text-decoration: none;
+    }
+    .socials
+    {
+        display: flex;
+        gap: 5px;
+    }
+    .icon
+    {
+        display: inline-block;
+        margin: 10px;
+        margin-top: 50px;
+    }
+    .links, .newsletter
+    {
+        margin-top: 10px;
+    }
+    @media only screen and (max-width: 600px)
+    {
+        .container
+        {
+            grid-template-columns: 1fr;
+            margin: 5%;
+        }
+        .filterby
+        {
+            justify-content: center;
+        }
+    }
+    </style>
 </body>
 </html>
