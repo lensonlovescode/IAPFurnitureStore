@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productElement = document.createElement('div');
                 productElement.classList.add('product');
                 productElement.innerHTML = `
-                    <img class="images" src="/IAPFurnitureStore/${product.image_path}" alt="${product.name}">
+                    <img class="images" src="/IAPFurnitureStore/Frontend/${product.image_path}" alt="${product.name}">
                     <h2>${product.name}</h2>
                     <p>$${product.price}</p>
                     <button class="button">Add To Cart</button>

@@ -3,7 +3,7 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
     $id = $_GET['id'];
     $action = $_GET['action'];
 
-    $pdo = new PDO('mysql:host=localhost;dbname=shipping_information', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=TaglineShore', 'root', '#Lensoni5lenson');
 
     if ($action === 'increase') {
         $stmt = $pdo->prepare("UPDATE cart1 SET quantity = quantity + 1 WHERE id = ?");

@@ -137,7 +137,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('fetch_cart.php')
+            fetch('../Backend/php/fetch_cart.php')
                 .then(response => response.json())
                 .then(data => {
                     const cartTable = document.querySelector('#cartTable tbody');
@@ -175,7 +175,7 @@
                         button.addEventListener('click', function() {
                             const itemId = this.getAttribute('data-id');
 
-                            fetch(`delete_from_cart.php?id=${itemId}`, {
+                            fetch(`../Backend/php/delete_from_cart.php?id=${itemId}`, {
                                 method: 'GET'
                             })
                             .then(response => response.json())
@@ -193,7 +193,7 @@
                         button.addEventListener('click', function() {
                             const itemId = this.getAttribute('data-id');
 
-                            fetch(`update_quantity.php?id=${itemId}&action=increase`, {
+                            fetch(`../Backend/php/update_quantity.php?id=${itemId}&action=increase`, {
                                 method: 'GET'
                             })
                             .then(response => response.json())
@@ -227,7 +227,7 @@
                 });
 
             document.getElementById('checkoutButton').addEventListener('click', function() {
-                window.location.href = 'shipping.php';
+                window.location.href = '../Backend/php/shipping.php';
             });
         });
     </script>

@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "shipping_information");
+$conn = mysqli_connect("localhost", "root", "#Lensoni5lenson", "TaglineShore");
 
 if ($conn == false) {
     die("Connection Error: " . mysqli_connect_error());

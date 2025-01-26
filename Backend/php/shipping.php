@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
-   <link rel="stylesheet" href="web_static\web_static\styles\checkout.css">
+   <link rel="stylesheet" href="../../Frontend/styles/checkout.css">
 </head>
 <body>
   <header>
